@@ -48,5 +48,5 @@ Third party dependencies include:
 * The Boost libraries.
 * LLVM and CLANG source code.
 
-The downloadable version, released under closed-source license terms, also
-depends on the Intel MKL and Intel IPP libraries.
+The binary version supplied by Inesonic and released under closed-source
+license terms, also depends on the Intel MKL and Intel IPP libraries.
