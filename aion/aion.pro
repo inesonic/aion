@@ -35,34 +35,42 @@ CONFIG += c++14
 
 SOURCES = main.cpp
 
-########################################################################################################################
-# Libraries
-#
+defined(SETTINGS_PRI, var) {
+    include($${SETTINGS_PRI})
+}
 
-INCLUDEPATH += $${INEEQT_INCLUDE}
-INCLUDEPATH += $${INECRYPTO_INCLUDE}
+INCLUDEPATH += $${INEAPP_INCLUDE}
 INCLUDEPATH += $${INELD_INCLUDE}
-INCLUDEPATH += $${INECBE_INCLUDE}
-INCLUDEPATH += $${INEM_INCLUDE}
-INCLUDEPATH += $${INEMAT_INCLUDE}
+INCLUDEPATH += $${INEEQT_INCLUDE}
 INCLUDEPATH += $${INECONTAINER_INCLUDE}
 INCLUDEPATH += $${INEQCONTAINER_INCLUDE}
+INCLUDEPATH += $${INECBE_INCLUDE}
+INCLUDEPATH += $${INEM_INCLUDE}
 INCLUDEPATH += $${INEUTIL_INCLUDE}
 INCLUDEPATH += $${INEUD_INCLUDE}
 INCLUDEPATH += $${INEWH_INCLUDE}
+INCLUDEPATH += $${INECRYPTO_INCLUDE}
 INCLUDEPATH += $${BOOST_INCLUDE}
 
-LIBS += -L$${INEEQT_LIBDIR} -lineeqt
-LIBS += -L$${INECRYPTO_LIBDIR} -linecrypto
+LIBS += -L$${INEAPP_LIBDIR} -lineapp
 LIBS += -L$${INELD_LIBDIR} -lineld
-LIBS += -L$${INECBE_LIBDIR} -linecbe
-LIBS += -L$${INEM_LIBDIR} -linem
-LIBS += -L$${INEMAT_LIBDIR} -linemat
+LIBS += -L$${INEEQT_LIBDIR} -lineeqt
 LIBS += -L$${INECONTAINER_LIBDIR} -linecontainer
 LIBS += -L$${INEQCONTAINER_LIBDIR} -lineqcontainer
+LIBS += -L$${INECBE_LIBDIR} -linecbe
+LIBS += -L$${INEM_LIBDIR} -linem
 LIBS += -L$${INEUTIL_LIBDIR} -lineutil
 LIBS += -L$${INEUD_LIBDIR} -lineud
 LIBS += -L$${INEWH_LIBDIR} -linewh
+LIBS += -L$${INECRYPTO_LIBDIR} -linecrypto
+
+defined(LLVM_PRI, var) {
+    include($${LLVM_PRI})
+}
+
+defined(INEMAT_PRI, var) {
+    include($${INEMAT_PRI})
+}
 
 ########################################################################################################################
 # Operating System
