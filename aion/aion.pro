@@ -90,35 +90,19 @@ unix {
 }
 
 win32 {
-    exists("C:/Program Files (x86)/Windows Kits/10/Lib/10.0.18362.0") {
-        WINDOWS_KIT_BASE="C:/Program Files (x86)/Windows Kits/10/Lib/10.0.18362.0"
-    } else {
-        exists("C:/Program Files (x86)/Windows Kits/10/Lib/10.0.19041.0") {
-            WINDOWS_KIT_BASE="C:/Program Files (x86)/Windows Kits/10/Lib/10.0.19041.0"
-        } else {
-            error("Unknown/Missing Windows kit.")
-        }
-    }
-
-    contains(QMAKE_TARGET.arch, x86_64) {
-        WINDOWS_KIT_DIRECTORY="$${WINDOWS_KIT_BASE}/um/x64"
-    } else {
-        WINDOWS_KIT_DIRECTORY="$${WINDOWS_KIT_BASE}/um/x86"
-    }
-
-    LIBS += "$${WINDOWS_KIT_DIRECTORY}/Version.Lib"
-    LIBS += "$${WINDOWS_KIT_DIRECTORY}/Psapi.Lib"
-    LIBS += "$${WINDOWS_KIT_DIRECTORY}/shell32.lib"
-    LIBS += "$${WINDOWS_KIT_DIRECTORY}/Ole32.Lib"
-    LIBS += "$${WINDOWS_KIT_DIRECTORY}/Uuid.Lib"
-    LIBS += "$${WINDOWS_KIT_DIRECTORY}/Kernel32.Lib"
-    LIBS += "$${WINDOWS_KIT_DIRECTORY}/User32.Lib"
-    LIBS += "$${WINDOWS_KIT_DIRECTORY}/Gdi32.Lib"
-    LIBS += "$${WINDOWS_KIT_DIRECTORY}/WinSpool.Lib"
-    LIBS += "$${WINDOWS_KIT_DIRECTORY}/OleAut32.Lib"
-    LIBS += "$${WINDOWS_KIT_DIRECTORY}/User32.Lib"
-    LIBS += "$${WINDOWS_KIT_DIRECTORY}/ComDlg32.Lib"
-    LIBS += "$${WINDOWS_KIT_DIRECTORY}/AdvAPI32.Lib"
+    LIBS += "$${WINDOWS_KIT_LIBDIR}/Version.Lib"
+    LIBS += "$${WINDOWS_KIT_LIBDIR}/Psapi.Lib"
+    LIBS += "$${WINDOWS_KIT_LIBDIR}/shell32.lib"
+    LIBS += "$${WINDOWS_KIT_LIBDIR}/Ole32.Lib"
+    LIBS += "$${WINDOWS_KIT_LIBDIR}/Uuid.Lib"
+    LIBS += "$${WINDOWS_KIT_LIBDIR}/Kernel32.Lib"
+    LIBS += "$${WINDOWS_KIT_LIBDIR}/User32.Lib"
+    LIBS += "$${WINDOWS_KIT_LIBDIR}/Gdi32.Lib"
+    LIBS += "$${WINDOWS_KIT_LIBDIR}/WinSpool.Lib"
+    LIBS += "$${WINDOWS_KIT_LIBDIR}/OleAut32.Lib"
+    LIBS += "$${WINDOWS_KIT_LIBDIR}/User32.Lib"
+    LIBS += "$${WINDOWS_KIT_LIBDIR}/ComDlg32.Lib"
+    LIBS += "$${WINDOWS_KIT_LIBDIR}/AdvAPI32.Lib"
 
     !contains(DEFINES, CBE_EXTERNAL_LINKER) {
         contains(QMAKE_TARGET.arch, x86_64) {
