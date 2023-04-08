@@ -31,7 +31,6 @@
 #include "application.h"
 
 int main(int argumentCount, char* argumentValues[]) {
-
     Application application(argumentCount, argumentValues);
     return application.exec();
 }
